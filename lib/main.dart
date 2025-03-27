@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'screens/home_dashboard';
 import 'screens/login_screen';
-import 'screens/home_dashboard.dart';
-import 'screens/registration_screen.dart';
+import 'screens/RegistrationScreen';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
