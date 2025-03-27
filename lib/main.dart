@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'screens/login_screen';
-import 'screens/home_dashboard.dart'; // Add your other screens here
+import 'screens/home_dashboard.dart';
+import 'screens/registration_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -14,8 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.blue),
       initialRoute: '/',
       routes: {
-        '/': (context) => LoginScreen(),
-        '/home': (context) => HomeDashboard(), // Define the home screen route
+        '/': (context) => const LoginScreen(),
+        '/home': (context) => HomeDashboardScreen(),
+        '/register': (context) => const RegistrationScreen(),
       },
     );
   }
