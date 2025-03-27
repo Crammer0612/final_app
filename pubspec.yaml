@@ -13,6 +13,8 @@ dependencies:
   flutter_spinkit: ^5.1.0
   fl_chart: ^0.55.0
   cupertino_icons: ^1.0.8
+  firebase_core: ^2.16.0
+  firebase_auth: ^4.6.0
 
 dev_dependencies:
   flutter_test:
