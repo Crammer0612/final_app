@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key); // Added key
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+
     return Scaffold(
-      resizeToAvoidBottomInset: false, // Prevents the screen from resizing
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: const Text('Login'), // Added const
-        backgroundColor: Colors.blueAccent, // Add some color to the AppBar
+        title: const Text('Login'),
+        backgroundColor: Colors.blueAccent,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -18,34 +21,36 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.lock, size: 100, color: Colors.blueAccent), // Added const
-              const SizedBox(height: 16), // Added const
+              const Icon(Icons.lock, size: 100, color: Colors.blueAccent),
+              const SizedBox(height: 16),
               const Text(
                 'MANZI NI UMOYO!',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ), // Added const
-              const SizedBox(height: 16), // Added const
-              const TextField(
-                decoration: InputDecoration(
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: emailController,
+                decoration: const InputDecoration(
                   labelText: 'Email or Phone',
                   border: OutlineInputBorder(),
                 ),
-              ), // Added const
-              const SizedBox(height: 16), // Added const
-              const TextField(
-                decoration: InputDecoration(
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: passwordController,
+                decoration: const InputDecoration(
                   labelText: 'Password',
                   border: OutlineInputBorder(),
                 ),
                 obscureText: true,
-              ), // Added const
-              const SizedBox(height: 16), // Added const
+              ),
+              const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () async {
                   try {
-                    // Replace with actual input values
-                    String email = 'user@example.com'; // Replace with user input
-                    String password = 'password123';   // Replace with user input
+                    // Get user input
+                    String email = emailController.text.trim();
+                    String password = passwordController.text.trim();
 
                     // Sign in with Firebase
                     UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -64,21 +69,21 @@ class LoginScreen extends StatelessWidget {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blueAccent,
-                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12), // Added const
+                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                 ),
-                child: const Text('Login', style: TextStyle(fontSize: 18)), // Added const
+                child: const Text('Login', style: TextStyle(fontSize: 18)),
               ),
               TextButton(
                 onPressed: () {
-                  // Navigate to Registration
+                  Navigator.pushNamed(context, '/register'); // Navigate to Registration
                 },
-                child: const Text('Register', style: TextStyle(color: Colors.blueAccent)), // Added const
+                child: const Text('Register', style: TextStyle(color: Colors.blueAccent)),
               ),
               TextButton(
                 onPressed: () {
-                  // Implement forgot password
+                  // Implement forgot password functionality
                 },
-                child: const Text('Forgot Password?', style: TextStyle(color: Colors.blueAccent)), // Added const
+                child: const Text('Forgot Password?', style: TextStyle(color: Colors.blueAccent)),
               ),
             ],
           ),

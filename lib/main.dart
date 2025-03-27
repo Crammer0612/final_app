@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'screens/home_dashboard';
+import 'screens/home_dashboard.dart';
 import 'screens/login_screen.dart';
 import 'screens/RegistrationScreen';
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const LoginScreen(),
-        '/home': (context) => HomeDashboardScreen(),
+        '/home': (context) => const HomeDashboardScreen(),
         '/register': (context) => const RegistrationScreen(),
       },
     );

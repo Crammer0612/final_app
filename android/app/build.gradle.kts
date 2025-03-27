@@ -4,6 +4,7 @@ plugins {
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
     id("com.google.gms.google-services") // Add the Google Services plugin
+    id("org.jetbrains.kotlin.android") version "1.8.22" apply false
 }
 
 android {
@@ -17,15 +18,18 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = "1.8"
     }
 
     defaultConfig {
         applicationId = "com.example.final_app"
-        minSdk = flutter.minSdkVersion
+        minSdk = 23 // Ensure this is set to 23
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+
+        // Add this line to force the minSdkVersion during manifest merging
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -33,7 +37,10 @@ android {
             signingConfig = signingConfigs.getByName("debug")
         }
     }
-}
+
+  
+    }
+
 
 flutter {
     source = "../.."
@@ -49,4 +56,5 @@ dependencies {
     // Add other Firebase dependencies as needed
     // Example: Firebase Authentication
     implementation("com.google.firebase:firebase-auth")
+    implementation("androidx.multidex:multidex:2.0.1")
 }

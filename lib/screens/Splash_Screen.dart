@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-//import 'package:final_app/screens/login_screen';
+import 'package:final_app/screens/login_screen.dart'; // Ensure this is the only import for LoginScreen
 
 void main() {
   runApp(MyApp());
