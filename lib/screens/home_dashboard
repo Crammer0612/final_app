@@ -1,5 +1,7 @@
+import 'package:final_app/screens/splash_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:final_app/screens/login_screen.dart';
 
 class HomeDashboardScreen extends StatelessWidget {
   @override
@@ -34,9 +36,6 @@ class HomeDashboardScreen extends StatelessWidget {
                   },
                   child: Text('Report an Issue'),
                 ),
-                SizedBox(height: 20),
-                Text('Map: Nearby Water Sources'),
-                // Add a map widget or image here
               ],
             ),
           ),
