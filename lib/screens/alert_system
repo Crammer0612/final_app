@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+
+class AlertSystemScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Alerts')),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            ListTile(
+              title: Text('Unsafe Water Quality Detected'),
+              subtitle: Text('Alert sent: 1 hour ago'),
+              leading: Icon(Icons.warning, color: Colors.red),
+            ),
+            ListTile(
+              title: Text('Turbidity Level Exceeds Limit'),
+              subtitle: Text('Alert sent: 2 hours ago'),
+              leading: Icon(Icons.warning, color: Colors.orange),
+            ),
+            SizedBox(height: 20),
+            SwitchListTile(
+              title: Text('Enable Push Notifications'),
+              value: true,
+              onChanged: (bool value) {
+                // Implement notification toggle
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

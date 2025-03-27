@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+
+class AdminDashboardScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Admin Dashboard')),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                // Manage user list
+              },
+              child: Text('Manage Users'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // View reported issues
+              },
+              child: Text('View Reports'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Send emergency alert
+              },
+              child: Text('Send Emergency Alert'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

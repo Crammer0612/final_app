@@ -1,0 +1,34 @@
+import 'package:flutter/material.dart';
+
+class HomeDashboardScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Water Quality Dashboard')),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Card(
+              child: ListTile(
+                title: Text('Current Water Quality'),
+                subtitle: Text('Turbidity: 45 NTU\npH: 7.2\nTemperature: 24°C'),
+                trailing: Icon(Icons.water_drop),
+              ),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Implement report issue
+              },
+              child: Text('Report an Issue'),
+            ),
+            SizedBox(height: 20),
+            Text('Map: Nearby Water Sources'),
+            // Add a map widget or image here
+          ],
+        ),
+      ),
+    );
+  }
+}
