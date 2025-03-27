@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "207170173935",
+    "firebase_url": "https://waterqualityapp-acf5d-default-rtdb.firebaseio.com",
+    "project_id": "waterqualityapp-acf5d",
+    "storage_bucket": "waterqualityapp-acf5d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207170173935:android:518da341681b635719d41a",
+        "android_client_info": {
+          "package_name": "com.example.final_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqR2ZfrXop6jrqMsC-WGe0wKJgSkCwvvM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207170173935:android:d0afc95e2df57bc719d41a",
+        "android_client_info": {
+          "package_name": "com.example.water_quality_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqR2ZfrXop6jrqMsC-WGe0wKJgSkCwvvM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
