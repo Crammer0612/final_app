@@ -30,17 +30,19 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 16),
               TextField(
                 controller: emailController,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   labelText: 'Email or Phone',
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
+                  errorText: emailController.text.isEmpty ? 'Email cannot be empty' : null,
                 ),
               ),
               const SizedBox(height: 16),
               TextField(
                 controller: passwordController,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   labelText: 'Password',
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
+                  errorText: passwordController.text.isEmpty ? 'Password cannot be empty' : null,
                 ),
                 obscureText: true,
               ),

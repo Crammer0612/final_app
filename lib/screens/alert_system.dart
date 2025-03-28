@@ -10,22 +10,24 @@ class AlertSystemScreen extends StatelessWidget {
         child: Column(
           children: [
             ListTile(
-              title: Text('Unsafe Water Quality Detected'),
-              subtitle: Text('Alert sent: 1 hour ago'),
-              leading: Icon(Icons.warning, color: Colors.red),
+              title: const Text('Unsafe Water Quality Detected'),
+              subtitle: const Text('Alert sent: 1 hour ago'),
+              leading: const Icon(Icons.warning, color: Colors.red),
             ),
+            const Divider(),
             ListTile(
-              title: Text('Turbidity Level Exceeds Limit'),
-              subtitle: Text('Alert sent: 2 hours ago'),
-              leading: Icon(Icons.warning, color: Colors.orange),
+              title: const Text('Turbidity Level Exceeds Limit'),
+              subtitle: const Text('Alert sent: 2 hours ago'),
+              leading: const Icon(Icons.warning, color: Colors.orange),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             SwitchListTile(
-              title: Text('Enable Push Notifications'),
+              title: const Text('Enable Push Notifications'),
               value: true,
               onChanged: (bool value) {
                 // Implement notification toggle
               },
+              activeColor: Colors.blueAccent,
             ),
           ],
         ),
